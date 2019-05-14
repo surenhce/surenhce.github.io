@@ -3,36 +3,36 @@
 
 void main()
 {
-	int n, a[1000], i, j, temp;
+	int n,a[1000],i,j,temp;
+	clrscr();
 	printf("Enter number of elements\n");
-	scanf("%d", &n);
-	printf("Enter %d integers\n", n);
+	scanf("%d",&n);
+	printf("Enter %d integers\n",n);
 
-	for (i = 0; i < n; i++)
+	for (i=0;i<n;i++)
 	{
-		scanf("%d", &a[i]);
+		scanf("%d",&a[i]);
 	}
 
-	for (i = 1; i <= n - 1; i++)
+	for (i=1;i<=n-1;i++)
 	{
-		j = i;
-		while (j >= 1)
+		j=i;
+		while(j>=1 && a[j]<a[j-1])
 		{
-			if (a[j] < a[j - 1])
+			if(a[j]<a[j-1])
 			{
+				temp=a[j];
+				a[j]=a[j-1];
+				a[j-1]=temp;
+				j--;
 			}
-			j--;
 		}
 	}
-
-	temp = a[j];
-	a[j] = a[j - 1];
-	a[j - 1] = temp;
 	printf("Sorted list in ascending order:\n");
 
-	for (i = 0; i <= n - 1; i++)
+	for (i=0;i<=n-1;i++)
 	{
-		printf("%d\n", a[i]);
+		printf("%d\n",a[i]);
 	}
 	getch();
 }

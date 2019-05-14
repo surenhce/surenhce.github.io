@@ -7,11 +7,14 @@ struct node
 	int num;
 	struct node *left, *right;
 };
+
 typedef struct node *NODE;
+
 NODE create(NODE root);
 void inorder(NODE root);
 void preorder(NODE root);
 void postorder(NODE root);
+
 void main()
 {
 	NODE root = NULL;
@@ -33,34 +36,24 @@ void main()
 				break;
 			case 2:
 				if (root == NULL)
-				{
 					printf("\n\t Tree is NULL");
-				}
 				else
-				{
 					inorder(root);
-				}
 				break;
 			case 3:
 				if (root == NULL)
-				{
 					printf("\n\t Tree is null, traversing is not possible");
-				}
 				else
-				{
 					preorder(root);
-				}
 				break;
 			case 4:
 				if (root == NULL)
-				{
 					printf("\n\t Tree is null, traversing is not possible");
-				}
 				else
-				{
+
 					postorder(root);
-				}
 				break;
+
 			case 5:
 				exit(0);
 				break;
@@ -69,7 +62,9 @@ void main()
 				break;
 		}
 	}
+
 }
+
 NODE create(NODE root)
 {
 	NODE newnode, temp, prev;
@@ -77,15 +72,19 @@ NODE create(NODE root)
 	newnode = (NODE) malloc(sizeof(struct node));
 	printf("\n Enter item to be added to the tree:\n");
 	scanf("\n%d", &num);
+
 	newnode->num = num;
 	newnode->left = NULL;
 	newnode->right = NULL;
+
 	if (root == NULL)
 	{
 		return newnode;
 	}
+
 	temp = root;
 	prev = root;
+
 	while (temp != NULL)
 	{
 		prev = temp;
@@ -103,6 +102,7 @@ NODE create(NODE root)
 			return root;
 		}
 	}
+
 	if (num < prev->num)
 	{
 		prev->left = newnode;
@@ -113,6 +113,7 @@ NODE create(NODE root)
 	}
 	return root;
 }
+
 void inorder(NODE root)
 {
 	if (root != NULL)
@@ -121,6 +122,7 @@ void inorder(NODE root)
 		printf("%d\t", root->num);
 		inorder(root->right);
 	}
+
 }
 void preorder(NODE root)
 {
@@ -138,5 +140,6 @@ void postorder(NODE root)
 		postorder(root->left);
 		postorder(root->right);
 		printf("%d\t", root->num);
+
 	}
 }

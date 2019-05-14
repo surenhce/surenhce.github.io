@@ -6,8 +6,10 @@ void main()
 {
 	int key, n, a[10], i, ch, pos = -1;
 	clrscr();
+
 	printf("Enter the array size:");
 	scanf("%d", &n);
+
 	printf("\nEnter the element...\n");
 	for (i = 0; i < n; i++)
 	{
@@ -16,6 +18,7 @@ void main()
 	}
 	printf("Enter the key to search...");
 	scanf("%d", &key);
+
 	while (ch != 3)
 	{
 		printf("\n1.Linear");
@@ -61,6 +64,7 @@ void main()
 		getch();
 	}
 }
+
 int l(int a[], int n, int key)
 {
 	int i, pos = -1;
@@ -73,6 +77,7 @@ int l(int a[], int n, int key)
 	}
 	return pos;
 }
+
 int b(int a[], int n, int key)
 {
 	int high, mid, low, pos;

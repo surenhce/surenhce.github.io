@@ -3,6 +3,7 @@
 
 void main()
 {
+	clrscr();
 	int a[100], n, i, j, temp;
 
 	printf("Enter number of elements\n");
